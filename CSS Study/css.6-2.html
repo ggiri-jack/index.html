@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="./css6-1.css">
+
+  <style>
+    .result {
+      padding: 0;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .outer {
+      background-color: beige;
+    }
+    .div_1 {
+      margin: 24px;
+      padding: 16px;
+      background-color: lightblue;
+    }
+    .div_2 {
+      display: none;
+      margin: 24px;
+      padding: 16px;
+      background-color: lightpink;
+    }
+    p { margin: 1em 0; }
+  </style>
+
+
+</head>
+<body>
+  <main>
+    <section class="result">
+
+      <!-- 시작 -->
+
+      <div class="wrapper">
+        컨텐츠만큼만 차지하는 부모 요소
+        <div class="outer">
+          <div class="div_1">
+            <h1>div 요소 1</h1>
+            <p>
+              <i>margin</i>과 <i>padding</i>에는 아래 형식 중 하나로 값을 줄 수 있습니다. <br>
+              <ul>
+                <li>공통</li>
+                <li>세로 가로</li>
+                <li>위 오른쪽 아래 왼쪽</li>
+                <li>위 가로 아래</li>
+              </ul>
+            </p>
+            <p>
+              블록 요소의 위, 아래 <i>margin</i>은 전후 블록 요소의 것과 상쇄됩니다.
+            </p>
+          </div>
+          <div class="div_2">
+            <h1>div 요소 2</h1>
+            <p>
+              <i>display</i>를 <em>none</em>으로 하면 화면에서 사라집니다. <br>
+              보이지만 않는 것이 아니라 공간도 차지하지 않게 되죠.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 끝 -->
+
+    </section>
+    <section class="controls"></section>
+  </main>
+
+  <script>
+    const marginOpts = [
+      '24px',
+      '4em',
+      '0',
+      '6vh 4vw',
+      '12px 24px 48px 96px',
+      '12px 24px 48px',
+    ]
+
+    const paddingOpts = [
+      '16px',
+      '4.8vmin',
+      '0',
+      '0 4em',
+      '1em 2em 3em 4em',
+      '4em 2em 0'
+    ]
+
+    const controls = [
+      {
+        obj: {
+          name: 'div 요소 1',
+          query: '.div_1'
+        },
+        fields: [
+          {
+            type: 'select',
+            style: 'margin',
+            opts: marginOpts
+          },
+          {
+            type: 'select',
+            style: 'padding',
+            opts: paddingOpts
+          },
+        ]
+      },
+      {
+        obj: {
+          name: 'div 요소 2',
+          query: '.div_2'
+        },
+        fields: [
+          {
+            type: 'radio',
+            style: 'display',
+            opts: [
+              'none',
+              'block'
+            ] 
+          },
+          {
+            type: 'select',
+            style: 'margin',
+            opts: marginOpts
+          },
+        ]
+      },
+      {
+        obj: {
+          name: 'p 요소',
+          query: 'p'
+        },
+        fields: [
+          {
+            type: 'radio',
+            style: 'margin',
+            opts: [
+              '1em 0',
+              '0'
+            ]
+          },
+        ]
+      },
+    ]
+  </script>
+</body>
+</html>

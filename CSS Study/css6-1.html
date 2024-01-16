@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="./css6-1.css">
+  <style>
+    div {
+      color: white;
+      background-color: slateblue;
+      width: 300px;
+      height: 160px;
+      line-height: 2em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="result">
+
+      <!-- 시작 -->
+
+      <h1>요소의 크기</h1>
+      <p>
+        inline이 아닌 요소는 <strong>width</strong>와 <strong>height</strong>로 크기를 조절할 수 있습니다.
+        <br><br>
+        단위로는 부모의 길이에 상대적인 <em>%</em>를 사용할 수도 있고 <br>
+        뷰포트<i>(viewport)</i> 너비와 높이의 1/100 단위인 <em>vw</em>와 <em>vh</em>, <br>
+        이들 중 큰 것과 작은 것의 1/100 단위인 <em>vmax</em>와 <em>vmin</em>도 유용하게 사용됩니다.
+        <br><br>
+        텍스트가 한 줄일 경우 <strong>height</strong>과 <strong>line-height</strong>을 똑같이 맞춰주면 <br>
+        세로 방향에서 가운데로 정렬한 것과 같은 모습이 됩니다.
+        <br><br>
+        <em>calc(100% - 50px)</em>과 같은 형식으로 연산자를 사용하여 <br>
+        필요에 맞는 길이로 조절할 수도 있습니다.
+
+
+      </p>
+      <div>
+        div 요소
+      </div>
+
+      <!-- 끝 -->
+
+    </section>
+    <section class="controls"></section>
+  </main>
+
+  <script>
+    const controls = [
+      {
+        obj: {
+          name: 'div 요소',
+          query: 'div'
+        },
+        fields: [
+          {
+            type: 'text',
+            style: 'width',
+            default: '300px'
+          },
+          {
+            type: 'text',
+            style: 'height',
+            default: '160px'
+          },
+          {
+            type: 'text',
+            style: 'line-height',
+            default: '2em'
+          },
+        ]
+      },
+      {
+        obj: {
+          name: 'div 위쪽 요소들',
+          query: 'h1, p'
+        },
+        fields: [
+          {
+            type: 'radio',
+            style: 'display',
+            opts: [
+              'block',
+              'none'
+            ]
+          },
+        ]
+      },
+    ]
+  </script>
+  
+</body>
+</html>
